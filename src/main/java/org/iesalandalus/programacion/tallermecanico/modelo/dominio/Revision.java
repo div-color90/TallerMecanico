@@ -70,7 +70,7 @@ public class Revision {
     }
     public int getHoras() { return horas; }
 
-    public void anadirHoras(int horas) {
+    public void anadirHoras(int horas) throws TallerMecanicoExcepcion {
         if (horas <= 0) {
             throw new IllegalArgumentException("Las horas a añadir deben ser mayores que cero.");
         }
@@ -81,7 +81,7 @@ public class Revision {
     }
     public float getPrecioMaterial() { return precioMaterial; }
 
-    public void anadirPrecioMaterial(float precioMaterial) {
+    public void anadirPrecioMaterial(float precioMaterial) throws TallerMecanicoExcepcion  {
         if (precioMaterial <= 0) {
             throw new IllegalArgumentException("El precio del material a añadir debe ser mayor que cero.");
         }
@@ -93,7 +93,7 @@ public class Revision {
     public boolean estaCerrada() {
         return fechaFin != null;
     }
-    public void cerrar(LocalDate fechaFin) {
+    public void cerrar(LocalDate fechaFin) throws TallerMecanicoExcepcion {
 
         if (estaCerrada()) {
             throw new TallerMecanicoExcepcion("La revisión ya está cerrada.");

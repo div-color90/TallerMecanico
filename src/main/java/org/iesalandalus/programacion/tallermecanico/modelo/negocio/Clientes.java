@@ -28,7 +28,7 @@ public class Clientes {
 
         public Cliente modificar(Cliente cliente, String nombre, String telefono) throws TallerMecanicoExcepcion{
             Objects.requireNonNull(cliente, "No se puede modificar un cliente nulo.");
-
+            //cliente clienteEncontrado= buscar(cliente);
             int indice = coleccionClientes.indexOf(cliente);
             if (indice == -1) {
                 throw new TallerMecanicoExcepcion("No existe ningún cliente con ese DNI.");
